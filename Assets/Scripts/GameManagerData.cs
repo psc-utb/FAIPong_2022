@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -13,7 +14,7 @@ public class GameManagerData
     {
         get
         {
-            if (instance != null) //<><>
+            if (instance == null)
                 instance = new GameManagerData();
             return instance;
         }
@@ -24,8 +25,8 @@ public class GameManagerData
 
     [Tooltip("Prvek UI.Text v uzivatelskem rozhrani, kam se bude vypisovat skore hrace 1")]
     [SerializeField]
-    Text player1Text; //<><>
-    public Text Player1Text //<><>
+    TextMeshProUGUI player1Text;
+    public TextMeshProUGUI Player1Text
     {
         get { return player1Text; }
         set { player1Text = value; }
@@ -52,8 +53,8 @@ public class GameManagerData
 
     [Tooltip("Prvek UI.Text v uzivatelskem rozhrani, kam se bude vypisovat skore hrace 2")]
     [SerializeField]
-    Text player2Text; //<><>
-    public Text Player2Text //<><>
+    TextMeshProUGUI player2Text;
+    public TextMeshProUGUI Player2Text
     {
         get { return player2Text; }
         set { player2Text = value; }
