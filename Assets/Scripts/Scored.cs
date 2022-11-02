@@ -10,6 +10,9 @@ public class Scored : MonoBehaviour
 
     public UnityEvent<int> ScoredEvent;
 
+    [SerializeField]
+    AudioSource audioSource;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -25,5 +28,10 @@ public class Scored : MonoBehaviour
     void OnTriggerEnter2D(Collider2D collider2D)
     {
         ScoredEvent?.Invoke(points);
+        if (audioSource != null)
+        {
+            audioSource.time = 1.0f;
+            audioSource.Play();
+        }
     }
 }
